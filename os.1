@@ -1,0 +1,53 @@
+.TH OS 1 local
+.SH NAME
+os \- process
+.I swtfmt
+and/or
+.I nroff
+output for the console Decwriter.
+.SH ORIGIN
+Georgia Tech
+.SH SYNOPSIS
+.IR text-processor " |"
+.B os
+> /dev/console
+.SH DESCRIPTION
+.I Os
+reads its standard input, and writes its standard output.
+It takes the output of
+.IR swtfmt (1),
+and/or
+.IR nroff (1),
+and turns it into a series of lines terminated with carriage returns
+(instead of line feeds), to do overstriking on the Decwriter console.
+.PP
+To use
+.IR os ,
+your output should be formatted for a standard line printer page.
+The file /usr/local/lib/swtfmt/evp defines the
+.B .EV
+macro, which
+will set everything up for you.  All you have to do is 
+.B .so
+("source", i.e. include) this file, and then put a 
+.B .EV
+into your file to set the values properly.
+.PP
+The standard
+.IR nroff (1)
+macro packages also adjust the page length and margins settings
+appropriately.
+.SH SEE ALSO
+.IR fos (1),
+.IR lz (1),
+.IR nroff (1),
+.IR swtfmt (1)
+.SH DIAGNOSTICS
+Self explanatory.
+.SH BUGS
+Only reads and writes
+.BR stdin " and " stdout .
+.PP
+Doesn't do anything with
+.IR swtfmt 's
+special characters.
