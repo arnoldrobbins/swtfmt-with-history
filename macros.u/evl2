@@ -1,0 +1,10 @@
+.# EV --- define formatting environment for typesetting on Xerox 9700
+.#        Use this file for formatting the Reference Manual
+.#
+.so /usr/local/lib/swtfmt/evl
+.#
+.# HE --- set page headings for typesetting environment
+.#
+.de HE <left> <center> <right>
+@[cc]he `[1]`[2]`[3]`
+.en HE
