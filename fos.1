@@ -1,0 +1,79 @@
+.TH FOS 1 local
+.SH NAME
+fos \- format, overstrike, and spool
+.I swtfmt
+files
+.SH ORIGIN
+Georgia Tech
+.SH SYNOPSIS
+.B fos
+[
+.B \-h
+] [ files ... ]
+.SH DESCRIPTION
+.I Fos
+is a shell file which hands its arguments to
+.IR swtfmt (1)
+for formatting.
+The output of
+.I swtfmt
+is then processed by
+.IR lz (1),
+which produces the proper DJDE statements, as well
+as the necessary overstriking commands for
+boldface, italic, and underlined text.
+All this is in turn handed to
+.IR lp (1),
+which sends it to the CDC Cyber 855 to be spooled on the Xerox 9700
+laser printer (by way of the IBM 4341).
+.PP
+If the
+.B \-h
+option is supplied,
+.I fos
+will cause the output to printed on holed paper.
+.I Fos
+will arrange to insert the proper DJDE statement which
+shifts the output over for holed paper.
+If given, the
+.B \-h
+.I must
+be the first argument.
+.PP
+On one of the I.C.S. Vaxen,
+.I fos
+will simply format its arguments, and then spool them to the lineprinter.
+The
+.B \-h
+option will be accepted, but ignored.
+.SH FILES
+.TP
+/tmp/fos.$$
+Input to
+.IR sed (1)
+to get the output of
+.I lz
+shifted over on holed paper.
+.SH SEE ALSO
+.IR swtfmt (1),
+.IR lz (1),
+.IR lp (1),
+and
+.IR os (1)
+.SH DIAGNOSTICS
+Whatever diagnostics produced by the other programs:
+.I Fos
+has no diagnostics of its own.
+.SH BUGS
+.I Fos
+is not very smart; it should probably allow more control over the
+other programs it calls.
+.PP
+.I Swtfmt
+source files should be (gradually) converted to
+.IR nroff (1)
+and
+.IR troff (1)
+input files.  This will help when the
+Documenter's Workbench set of programs is brought up on
+the Pyramid and Vaxes.
