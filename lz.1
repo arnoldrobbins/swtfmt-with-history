@@ -1,0 +1,99 @@
+.TH LZ 1 local
+.SH NAME
+lz \- process
+.I swtfmt
+output for Xerox 9700 lazer printer
+.SH ORIGIN
+Georgia Tech
+.SH SYNOPSIS
+.B lz
+[
+.B \-l
+.IR page_length " ]"
+[
+.B \-d
+]
+.SH DESCRIPTION
+.I Lz
+reads its standard input, and writes its standard output.
+It takes the output of
+.IR swtfmt (1),
+and turns it into what is necessary for the OCS Xerox 9700 laser printer.
+It recognizes the backspacing sequences and puts out the appropriate codes to
+effect underlining, italics, or boldfacing, as necessary.
+.PP
+.I Lz
+takes two options:
+.RS
+.TP
+.BI \-l " page_length"
+Set the logical page length to
+.IR page_length .
+.I Lz
+defaults to a page length of 87, which provides normal output when using
+the font style necessary for boldfacing.  A
+.I page_length
+less than or equal to zero, or greater than 90 will be
+.I silently
+adjusted back to 87.
+.TP
+.B \-d
+No duplex.
+This option tells
+.I lz
+to only use one side of each page when printing.
+By default, output will be double sided.
+.RE
+.PP
+To use
+.IR lz ,
+your output should be formatted for a page 94 columns across by 87 lines
+down.  OCS automatically provides 1/2" margins on the top and left sides,
+so you should take this into account in setting the
+.BR .lm ,
+.BR .rm ,
+.BR .m1 ,
+.BR .m2 ,
+.BR .m3 ,
+.BR .m4 ,
+.BR .po ,
+.BR .eo ,
+and
+.BR .oo ,
+commands in
+.IR swtfmt (1).
+The file /usr/local/lib/swtfmt/evl defines the
+.B .EV
+macro, which
+will set everything up for you.  All you have to do is 
+.B .so
+("source", i.e. include) this file, and then put a 
+.B .EV
+into your file to set the values properly.
+.PP
+If you are enough of an
+.IR nroff (1)
+wizard to adjust the margins properly, you can use
+.I lz
+for
+.I nroff
+as well, although you will probably be better off using
+.IR lprint (1),
+instead.
+.SH SEE ALSO
+.IR fos (1),
+.IR nroff (1),
+.IR os (1),
+.IR lp (1),
+.IR lprint (1),
+and
+.IR swtfmt (1)
+.SH DIAGNOSTICS
+Self explanatory.
+.SH BUGS
+Only reads and writes
+.BR stdin " and " stdout .
+.PP
+Doesn't do anything with
+.IR swtfmt 's
+special characters.
