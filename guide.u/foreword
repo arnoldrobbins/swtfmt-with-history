@@ -1,0 +1,18 @@
+.mh "Foreword"
+.fo ""- [rn [pn]] -""
+'Swtfmt' is a program designed to facilitate the preparation of
+neatly formatted text.  It provides many features, such as automatic
+margin alignment, paragraph indentation, hyphenation and
+pagination, that are designed to greatly ease an otherwise
+tedious job.
+.pp
+'Swtfmt' is provided on Georgia Tech UNIX systems to ease the
+transition of formatter files from the Software Tools Subsystem on
+the Prime to the UNIX environment.
+Although this program will be provided
+indefinitely, users are urged to convert their formatter input
+files gradually to 'nroff' input files.
+.pp
+It is the intent of this guide to familiarize the user
+with the principles of automatic text formatting in general
+and with the capabilities and usage of 'swtfmt' in particular.
