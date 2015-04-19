@@ -1,0 +1,75 @@
+Sun Apr 19 16:10:02 IDT 2015
+============================
+
+These are the files for the Georgia Tech Software Tools Subsystem 'fmt'
+formatter translated into C by Arnold Robbins.  The Ratfor version
+was a much-improved version of the original formatter in the Software
+Tools book.
+
+I have not touched these files in close to 20 years, as evidenced by
+the dates. I'm posting them to GitHub so that they'll be available for
+anyone who is interested.
+
+Arnold Robbins
+arnold@skeeve.com
+
+Here is a full listing of the files, with the modification times.
+
+./macros.u/evl		--- Tue Oct 16 15:37:32 1984 +0000
+./macros.u/ds_report	--- Tue Nov 06 17:19:20 1984 +0000
+./macros.u/envd		--- Tue Nov 06 17:19:21 1984 +0000
+./macros.u/envp		--- Tue Nov 06 17:19:22 1984 +0000
+./macros.u/evd		--- Tue Nov 06 17:19:22 1984 +0000
+./macros.u/evp		--- Tue Nov 06 17:19:24 1984 +0000
+./macros.u/evt		--- Tue Nov 06 17:19:24 1984 +0000
+./macros.u/gt_thesis	--- Tue Nov 06 17:19:26 1984 +0000
+./macros.u/ics4120	--- Tue Nov 06 17:19:27 1984 +0000
+./macros.u/info		--- Tue Nov 06 17:19:28 1984 +0000
+./macros.u/let		--- Tue Nov 06 17:19:28 1984 +0000
+./macros.u/numpar	--- Tue Nov 06 17:19:29 1984 +0000
+./macros.u/report	--- Tue Nov 06 17:19:29 1984 +0000
+./macros.u/ugh		--- Tue Nov 06 17:19:30 1984 +0000
+./macros.u/ugm		--- Tue Nov 06 17:19:31 1984 +0000
+./macros.u/ugnh		--- Tue Nov 06 17:19:32 1984 +0000
+./macros.u/evl2		--- Tue Nov 06 17:21:34 1984 +0000
+./macros.u/Makefile	--- Wed Nov 07 22:26:26 1984 +0000
+./guide.u/Makefile	--- Fri Dec 14 16:27:42 1984 +0000
+./guide.u/basics	--- Fri Dec 14 16:27:46 1984 +0000
+./guide.u/conditionals	--- Fri Dec 14 16:27:47 1984 +0000
+./guide.u/foreword	--- Fri Dec 14 16:27:49 1984 +0000
+./guide.u/func_commands	--- Fri Dec 14 16:27:50 1984 +0000
+./guide.u/guide		--- Fri Dec 14 16:27:51 1984 +0000
+./guide.u/headings	--- Fri Dec 14 16:27:52 1984 +0000
+./guide.u/macros	--- Fri Dec 14 16:27:56 1984 +0000
+./guide.u/tabs		--- Fri Dec 14 16:28:02 1984 +0000
+./guide.u/title_page	--- Fri Dec 14 16:28:03 1984 +0000
+./guide.u/applications	--- Fri Dec 14 16:55:00 1984 +0000
+./guide.u/guide2	--- Fri Dec 14 16:58:09 1984 +0000
+./guide.u/misc		--- Fri Dec 14 16:59:28 1984 +0000
+./os.1			--- Mon Dec 17 15:11:53 1984 +0000
+./swtfmt.1		--- Mon Dec 17 15:14:01 1984 +0000
+./os.c			--- Mon Dec 17 17:57:01 1984 +0000
+./guide.u/alpha_commands	--- Mon Dec 17 18:58:01 1984 +0000
+./lz.1			--- Mon Jan 21 16:02:53 1985 +0000
+./sprint.c		--- Wed Mar 06 13:35:13 1985 +0000
+./dprint.d		--- Mon Mar 11 17:10:30 1985 +0000
+./chardefs.h		--- Tue Mar 26 15:30:25 1985 +0000
+./fmt.h			--- Tue Mar 26 15:30:30 1985 +0000
+./fill.c		--- Tue Mar 26 15:30:35 1985 +0000
+./misc.c		--- Tue Mar 26 15:30:36 1985 +0000
+./mac.c			--- Tue Mar 26 15:30:48 1985 +0000
+./fos.sh		--- Wed May 01 14:14:26 1985 +0000
+./fos.1			--- Wed May 01 14:16:28 1985 +0000
+./lz.c			--- Wed May 08 13:56:21 1985 +0000
+./guide.u/filling	--- Wed May 29 14:48:25 1985 +0000
+./guide.u/spacing	--- Wed May 29 14:49:06 1985 +0000
+./guide.u/margins	--- Wed May 29 14:49:44 1985 +0000
+./guide.u/input		--- Wed May 29 14:51:14 1985 +0000
+./guide.u/packages	--- Wed May 29 14:51:44 1985 +0000
+./extern.h		--- Wed May 29 14:57:59 1985 +0000
+./cmd.c			--- Wed May 29 14:58:00 1985 +0000
+./main.c		--- Wed May 29 14:58:00 1985 +0000
+./makefile		--- Wed May 29 14:59:37 1985 +0000
+./new.c			--- Wed May 29 15:34:07 1985 +0000
+./io.c			--- Wed May 29 15:34:23 1985 +0000
+./guide.u/OUT		--- Thu May 30 16:04:32 1985 +0000
