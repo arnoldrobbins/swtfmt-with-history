@@ -15,7 +15,7 @@ TARGET3 = fos
 TARGET4 = os
 PRINTS = $(HDR) $(SRC) lz.c os.c fos.sh makefile
 
-CFLAGS= -O -V
+CFLAGS= -g -DUSG
 P= pr
 
 all: $(TARGET1) $(TARGET2) $(TARGET4)

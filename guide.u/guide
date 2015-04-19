@@ -1,4 +1,4 @@
-.so /usr/local/lib/swtfmt/ugh
+.so ugh
 .###################### Local Macro Definitions #########################
 .#
 .# RQ --- begin a new entry in the request summary
@@ -50,26 +50,26 @@ Syntax@[tc]Value@[tc]Parameter@[tc]Break@[tc]Explanation
 .en ET
 .#
 .###################### End of Macro Definitions #########################
-.so /usr/doc/swtfmt/title_page
+.so title_page
 .bp 5
-.so /usr/doc/swtfmt/foreword
+.so foreword
 .bp 1
 .HE "Text Formatter User's Guide"
 .fo ``- # -``
-.so /usr/doc/swtfmt/basics
-.so /usr/doc/swtfmt/filling
-.so /usr/doc/swtfmt/spacing
-.so /usr/doc/swtfmt/margins
-.so /usr/doc/swtfmt/headings
-.so /usr/doc/swtfmt/tabs
-.so /usr/doc/swtfmt/misc
-.so /usr/doc/swtfmt/input
-.so /usr/doc/swtfmt/macros
-.so /usr/doc/swtfmt/conditionals
+.so basics
+.so filling
+.so spacing
+.so margins
+.so headings
+.so tabs
+.so misc
+.so input
+.so macros
+.so conditionals
 .bp
-.so /usr/doc/swtfmt/applications
-.so /usr/doc/swtfmt/packages
+.so applications
+.so packages
 .bp
-.so /usr/doc/swtfmt/alpha_commands
+.so alpha_commands
 .bp 3
 .TC

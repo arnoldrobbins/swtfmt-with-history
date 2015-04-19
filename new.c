@@ -13,14 +13,12 @@ putlin(text, fp)
 register char *text;
 FILE *fp;
 {
-#ifdef notdef
 	register int i;
 
-if (Dvflag == NO)
-	for (i = 0; text[i]; i++)
-		if (text[i] == PHANTOMBL)
-			text[i] = ' ';
-#endif
+	if (Dvflag == NO)
+		for (i = 0; text[i]; i++)
+			if (text[i] == PHANTOMBL)
+				text[i] = ' ';
 
 	fputs (text, fp);
 	fflush (fp);
@@ -174,12 +172,12 @@ char *str;
 		break;
 
 	case SYS_DATE:		/* mm/dd/yy */
-		sprintf(str, "%2.2d/%02.2d/%2.2d", now->tm_mon + 1,
+		sprintf(str, "%2.2d/%02d/%2.2d", now->tm_mon + 1,
 			now->tm_mday, now->tm_year);
 		break;
 
 	case SYS_TIME:		/* hh:mm:ss */
-		sprintf(str, "%2.2d:%02.2d:%2.2d", now->tm_hour,
+		sprintf(str, "%2.2d:%02d:%2.2d", now->tm_hour,
 			now->tm_min, now->tm_sec);
 		break;
 
@@ -360,13 +358,13 @@ register TABLE *table;
 
 /* tmpfile --- create a temporary file open for writing */
 
-TEMPFILE tmpfile()
+TEMPFILE temp_file()
 {
 	static int i = 1;
 	char buf[MAXLINE];
 	TEMPFILE t;
 
-	sprintf(buf, "/usr/tmp/fmt.%d.%d", getpid(), i++);
+	sprintf(buf, "/tmp/fmt.%d.%d", getpid(), i++);
 	if (i > 999)
 		i = 0;
 	
@@ -405,7 +403,6 @@ int tsize, esize;
     */
 
 	register int i, j, k, x;
-	int strcmp ();
 
 	i = 0;
 	j = tsize / esize - 1;
@@ -445,7 +442,6 @@ int tsize, esize;
 	*/
 
 	register int i, j;
-	int strcmp ();
 
 	for (j = 0; & stab[j * esize] < stab + tsize; j++)
 		if (strcmp (str, *(char **)(stab + esize * j)) == 0)

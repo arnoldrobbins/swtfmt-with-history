@@ -7,6 +7,8 @@
 #include "fmt.h"
 #include "extern.h"
 
+static trim (char *s);
+
 /* newinp --- open new input file, stack its descriptor */
 
 newinp (name)
@@ -137,7 +139,7 @@ reset_files()
 		{
 			char buf[MAXLINE];
 
-			sprintf(buf, "/usr/tmp/fmt.%d.%d",
+			sprintf(buf, "/tmp/fmt.%d.%d",
 				getpid(), O_list[i].id);
 			fclose (O_list[i].fp);
 			/*
@@ -170,7 +172,7 @@ FILE *xopen (name, mode)
 char *name, *mode;
 {
 	int i, fn;
-	TEMPFILE tmpfile();
+	TEMPFILE temp_file();
 	FILE *fopen();
 	char *index();
 	char *expand_env();
@@ -183,7 +185,7 @@ char *name, *mode;
 	else if (fn >= 1 && fn <= MAXFILES)
 	{
 		if (O_list[fn].fp == NULL)
-			O_list [fn] = tmpfile ();
+			O_list [fn] = temp_file ();
 		return O_list[fn].fp;
 	}
 	else

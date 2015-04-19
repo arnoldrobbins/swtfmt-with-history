@@ -297,6 +297,7 @@ char *buf;
 			{
 				Dvflag = YES;
 				newout (File_name);
+				Using_temps = YES;
 			}
 			else
 			{

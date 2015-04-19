@@ -113,7 +113,7 @@ int i;
 	char *index();
 	char lc, rc, c;
 	int ret;
-	static short int lck [2][26] = {
+	static int lck [2][26] = {
 		000000,
 		073555,
 		073155,
@@ -614,9 +614,9 @@ int pageno;
 
 
 
-/* putw --- insert a word in outbuf, bump counters */
+/* putword --- insert a word in outbuf, bump counters */
 
-putw (word, ww, wl)
+putword (word, ww, wl)
 char *word;
 int ww, wl;
 {
@@ -659,14 +659,14 @@ char *wrdbuf;
 		}
 		room = llval - Outw;
 		if (ww <= room)
-			putw (wrdbuf, ww, length (wrdbuf));
+			putword (wrdbuf, ww, length (wrdbuf));
 		else if (hynate (wrdbuf, room, left, right) == YES)
 		{
-			putw (left, width (left), length (left));
+			putword (left, width (left), length (left));
 			if (Adjust == BOTH)
 				spread (Outbuf, & Outp, llval - Outw, Outwds);
 			do_brk();
-			putw (right, width (right), length (right));
+			putword (right, width (right), length (right));
 		}
 		else
 		{
@@ -683,7 +683,7 @@ char *wrdbuf;
 			if (Adjust == BOTH)
 				spread (Outbuf, & Outp, llval - Outw, Outwds);
 			do_brk();
-			putw (wrdbuf, ww, length (wrdbuf));
+			putword (wrdbuf, ww, length (wrdbuf));
 		}
 		Word_last = YES;
 	}

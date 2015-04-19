@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 #define PAGE_SIZE	66
 #define MAXLINE		85

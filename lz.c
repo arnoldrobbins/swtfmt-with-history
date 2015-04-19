@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 #define PAGE_SIZE	87
 #define FORMAT		"GTPF6"
@@ -23,8 +24,8 @@ int Obp = 0;			/* output buffer pointer */
 int Nls = 1;			/* current number of newlines pending */
 int Os = 0;			/* current line should be overstruck */
 
-char *yn[] = { "YES", "NO" };	/* duplex operation (two sided pages) */
-char **dup = yn;
+char *yesno[] = { "YES", "NO" };	/* duplex operation (two sided pages) */
+char **dup = yesno;
 
 
 /*
@@ -57,7 +58,7 @@ char **argv;
 				break;
 
 			case 'd':
-				if (dup == yn)
+				if (dup == yesno)
 					dup++;
 				break;
 

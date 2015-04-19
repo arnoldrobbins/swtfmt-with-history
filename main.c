@@ -60,7 +60,7 @@ int F_ptr;			/* index into f_list, indicates current input file */
 INPUT F_list[MAXFILES];		/* stack of currently-open input files */
 TEMPFILE O_list[MAXFILES+1];	/* descriptors of output temporaries; init = NULL */
 int Using_temps = NO;		/* Is the current divert a temporary? */
-FILE *Out_file = stdout;	/* output file descriptor for divert */
+FILE *Out_file;			/* output file descriptor for divert */
 int Next_arg = 0;		/* next argument to be checked for file name */
 int Tabs[MAXLINE+1];		/* tab stops for tab expansion */
 int Numreg[MAXNUMREGS+1];	/* number registers for general use */
@@ -328,6 +328,7 @@ char **argv;
 
 	static char errbuf[BUFSIZ];
 
+	Out_file = stdout;
 	setbuf (stderr, errbuf);
 
 	xargc = argc;

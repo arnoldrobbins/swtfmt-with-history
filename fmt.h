@@ -6,6 +6,8 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* some Software Tools defines */
 #define YES		1

@@ -1,0 +1,4 @@
+2015-04-19         Arnold D. Robbins     <arnold@skeeve.com>
+
+	* ChangLog: Created.
+	* guide: Use relative paths to be able to format the doc.

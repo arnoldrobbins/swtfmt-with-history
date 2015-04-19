@@ -680,7 +680,6 @@ char *name, *text;
 int len;
 {
 	register int i, j, k;
-	char *malloc();
 
 	if (! printable(name[0]) || ! printable(name[1]))
 	{
@@ -987,89 +986,89 @@ char *str;
 {
 	int aval, out;
 
-#define outchar(ch)	{if(out<size){str[out]='ch';out++;}}
+#define outchar(ch)	{if(out<size){str[out]=ch;out++;}}
 
 	out = 0;
 	aval = abs (val);
 	if (val < 0)
-		outchar (-);
+		outchar ('-');
 
 	while (aval >= 1000)
 	{
-		outchar (m);
+		outchar ('m');
 		aval -= 1000;
 	}
 	if (aval >= 900)
 	{
-		outchar (c);
-		outchar (m);
+		outchar ('c');
+		outchar ('m');
 		aval -= 900;
 	}
 	else if (aval >= 500)
 	{
-		outchar (d);
+		outchar ('d');
 		aval -= 500;
 	}
 
 	if (aval >= 400)
 	{
-		outchar (c);
-		outchar (d);
+		outchar ('c');
+		outchar ('d');
 		aval -= 400;
 	}
 	else
 		while (aval >= 100)
 		{
-			outchar (c);
+			outchar ('c');
 			aval -= 100;
 		}
 	if (aval >= 90)
 	{
-		outchar (x);
-		outchar (c);
+		outchar ('x');
+		outchar ('c');
 		aval -= 90;
 	}
 	else if (aval >= 50)
 	{
-		outchar (l);
+		outchar ('l');
 		aval -= 50;
 	}
 
 	if (aval >= 40)
 	{
-		outchar (x);
-		outchar (l);
+		outchar ('x');
+		outchar ('l');
 		aval -= 40;
 	}
 	else
 		while (aval >= 10)
 		{
-			outchar (x);
+			outchar ('x');
 			aval -= 10;
 		}
 
 	if (aval >= 9)
 	{
-		outchar (i);
-		outchar (x);
+		outchar ('i');
+		outchar ('x');
 		aval -= 9;
 	}
 	else if (aval >= 5)
 	{
-		outchar (v);
+		outchar ('v');
 		aval -= 5;
 	}
 
 	if (aval >= 4)
 	{
-		outchar (i);
-		outchar (v);
+		outchar ('i');
+		outchar ('v');
 		aval -= 4;
 	}
 	else
 		while (aval >= 1)
 		{
-			outchar (i);
+			outchar ('i');
 			aval--;
 		}
 

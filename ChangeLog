@@ -1,0 +1,23 @@
+2015-04-19         Arnold D. Robbins     <arnold@skeeve.com>
+
+	* ChangLog: Created.
+
+	Make things compile in the 21st century.
+
+	* cmd.c (comand): Set `Using_temps = YES' in dv_REQ.
+	* fill.c (divok): Change `lck' from short to int.
+	(putword): Renamed from `putw'. Adjust all calls.
+	* fmt.h: Add some modern includes.
+	* io.c (trim): Declare at top of file.
+	(reset_files): Use a more modern temp directory path.
+	(temp_file): Rename from `tmpfile'. Adjust all uses.
+	* lz.c: Add a modern include. Rename `yn' to `yesno'.
+	* mac.c: Remove declaration of `malloc'.
+	(outchar): Adjust macro text and calls.
+	* main.c (Out_file): Init to stdout at runtime.
+	* makefile (CFLAGS): Adjust.
+	* new.c (putlin): Fix to work.
+	(date): Adjust printf formats.
+	(temp_file): Rename from `tmpfile'. Adjust all uses.
+	(strbsr): Remove declaration of `strcmp'.
+	* os.c: Add a modern include.
